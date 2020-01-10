@@ -1,29 +1,17 @@
-import React, { Component } from 'react'
-import Table from './table'
+import React, { Component } from 'react';
+import Table from './table';
+import Form from './form';
 
 
 
 
 class App extends Component {
     state = {
-        characters: [
-            {
-                name: 'Charlie',
-                job: 'Janitor',
-              },
-              {
-                name: 'Mac',
-                job: 'Bouncer',
-              },
-              {
-                name: 'Dee',
-                job: 'Aspring actress',
-              },
-              {
-                name: 'Dennis',
-                job: 'Bartender',
-              },
-        ],
+        characters: [],
+      }
+
+      handleSubmit = character => {
+        this.setState({ characters: [...this.state.characters, character] })
       }
 
       removeCharacter = index => {
@@ -42,6 +30,7 @@ class App extends Component {
         return (
           <div className="container">
             <Table characterData={characters} removeCharacter={this.removeCharacter} />
+            <Form handleSubmit={this.handleSubmit} />
           </div>
         )
       }
