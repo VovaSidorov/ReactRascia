@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Table from './table';
 import Form from './form';
+import Api from './api';
 
 
 
@@ -31,6 +32,7 @@ class App extends Component {
           <div className="container">
             <Table characterData={characters} removeCharacter={this.removeCharacter} />
             <Form handleSubmit={this.handleSubmit} />
+            <Api />
           </div>
         )
       }
